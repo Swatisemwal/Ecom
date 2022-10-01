@@ -1,0 +1,89 @@
+{
+  "maincategory": [
+    {
+      "name": "male",
+      "id": 1
+    },
+    {
+      "name": "female",
+      "id": 2
+    }
+  ],
+  "subcategory": [
+    {
+      "_id": "1",
+      "name": "shoes",
+      "id": 1
+    },
+    {
+      "name": "Bikes",
+      "id": 3
+    }
+  ],
+  "brand": [
+    {
+      "name": "addidas",
+      "id": 1
+    },
+    {
+      "name": "Nike",
+      "id": 2
+    },
+    {
+      "name": "Gucci",
+      "id": 3
+    },
+    {
+      "name": "zara",
+      "id": 4
+    },
+    {
+      "_id": "5",
+      "name": "H & M",
+      "id": 5
+    },
+    {
+      "name": "TVS Apache",
+      "id": 6
+    }
+  ],
+  "product": [
+    {
+      "_id": "1",
+      "name": "Gucci shoes",
+      "maincategory": "male",
+      "subcategory": "shoes",
+      "brand": "Gucci",
+      "color": "black",
+      "size": "XXL",
+      "baseprice": 7500,
+      "discount": 10,
+      "finalprice": 6750,
+      "stock": "In Stock",
+      "description": "This is Sample Product",
+      "pic1": "pic1.jpg",
+      "pic2": "pic2.jpg",
+      "pic3": "pic3.jpg",
+      "pic4": "pic4.jpg",
+      "id": 1
+    },
+    {
+      "name": "TVS Apache 160 4v(Special Addition)",
+      "maincategory": "male",
+      "subcategory": "Bikes",
+      "brand": "TVS Apache",
+      "color": "black",
+      "size": "XXL",
+      "baseprice": 150000,
+      "discount": 1,
+      "finalprice": 148500,
+      "stock": "In Stock",
+      "description": "This is Sample Product",
+      "pic1": "pic5.jpg",
+      "pic2": "pic5.jpg",
+      "pic3": "pic5.jpg",
+      "pic4": "pic5.jpg",
+      "id": 2
+    }
+  ]
+}
