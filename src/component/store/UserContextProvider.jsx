@@ -1,8 +1,9 @@
 import React,{createContext} from "react"
 
-export const Product = createContext()
-async function addProduct(item){
-  var rawdata = await fetch("/product",{
+export const User = createContext()
+async function addUser(item){
+    // console.log('contextItem:',item)
+  var rawdata = await fetch("/user",{
     method:"post",
     headers:{
         "content-type":"application/json"
@@ -11,13 +12,13 @@ async function addProduct(item){
 })
 var result = await rawdata.json()
 if(result)
-return {result:"Done",message:"Product is Created"}
+return {result:"Done",message:"User is Created"}
 else
 return {result:"Fail",message:"Internal Server Error"}
 }
 
-async function getProduct(item){
-    var rawdata = await fetch("/product")
+async function getUser(){
+    var rawdata = await fetch("/user")
     var result = await rawdata.json()
     
     var d = []
@@ -31,17 +32,17 @@ async function getProduct(item){
     else
     return {result:"Fail",message:"Internal Server Error"}
 }
-async function deleteProduct(item){
-    var rawdata = await fetch("/product/"+item._id,{
+async function deleteUser(item){
+    var rawdata = await fetch("/user/"+item._id,{
         method:"delete"
     })
     var result = await rawdata.json()
     console.log(result);
-    return {result:"Done",message:"Product is Deleted"}
+    return {result:"Done",message:"User is Deleted"}
 }
 
-async function getSingleProduct(item){
-    var rawdata = await fetch("/product/"+item._id)
+async function getSingleUser(item){
+    var rawdata = await fetch("/user/"+item._id)
     var result = await rawdata.json()
     var {id,...x} = result
     if(result)
@@ -49,8 +50,8 @@ async function getSingleProduct(item){
     else
     return {result:"Fail",message:"Internal Server Error"}
 }
-async function updateProduct(item){
-    var rawdata = await fetch("/product/"+item._id,{
+async function updateUser(item){
+    var rawdata = await fetch("/user/"+item._id,{
         method:"put",
         headers:{
             "content-type":"application/json"
@@ -59,24 +60,19 @@ async function updateProduct(item){
     })
     var result = await rawdata.json()
     if(result)
-    return {result:"Done",message:"ProductProductContext is Update"}
+    return {result:"Done",message:"User is Update"}
     else
     return {result:"Fail",message:"Internal Server Error"}
 }
 
 
-export default function ProductContextProvider(props) {
-  return (
-    <Product.Provider
-      value={{
-        add: addProduct,
-        getProduct: getProduct,
-        deleteData: deleteProduct,
-        getSingle: getSingleProduct,
-        update: updateProduct,
-      }}
-    >
-      {props.children}
-    </Product.Provider>
-  );
+export default function UserContextProvider(props){
+    return <User.Provider value={{add:addUser,
+        getUser:getUser,
+     deleteData:deleteUser,
+      getSingle:getSingleUser,
+      update:updateUser
+      }}>
+        {props.children}
+    </User.Provider>
 }

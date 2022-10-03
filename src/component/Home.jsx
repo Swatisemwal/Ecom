@@ -66,7 +66,7 @@ function Home() {
     }
 </Carousel>
 <h5 className='background text-light text-center p-2 my-2'>Latest Products Section</h5>
-<ProductList/>
+<ProductList mc="All" sc="All" br="All"/>
 </>
   )
 }

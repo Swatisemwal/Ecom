@@ -9,6 +9,9 @@ import { Link, useParams } from 'react-router-dom';
 import { Maincategory } from "./store/MainCategoryContextProvider"
 import { Subcategory } from "./store/SubCategoryContextProvider"
 import { Brand } from "./store/BrandContextProvider "
+// import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 export default function LeftNav() {
     var [maincategory, setmaincategory] = useState([])
     var [subcategory, setsubcategory] = useState([])
@@ -17,6 +20,8 @@ export default function LeftNav() {
     var { getSubcategory } = useContext(Subcategory)
     var { getBrand } = useContext(Brand)
     var { mc, sc, br } = useParams()
+    // const history = useHistory();
+    const navigate = useNavigate();
 
     async function getAPIData() {
         var response = await getMaincategory()
@@ -31,6 +36,8 @@ export default function LeftNav() {
     useEffect(() => {
         getAPIData()
     }, [])
+
+
     return (
         <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <nav aria-label="secondary mailbox folders">
@@ -45,7 +52,11 @@ export default function LeftNav() {
                         maincategory.map((item, index) => {
                             return <ListItem key={index} disablePadding>
                                 <ListItemButton>
+                                    {console.log('maincat item:',item)}
+                                    {console.log('maincat :',mc)}
+                                    {console.log('maincat name:',item.name)}
                                     <Link to={`/shop/${item.name}/${sc}/${br}`} className='text-decoration-none text-danger'>{item.name}</Link>
+                                
                                 </ListItemButton>
                             </ListItem>
                         })
@@ -62,6 +73,8 @@ export default function LeftNav() {
                         subcategory.map((item, index) => {
                             return <ListItem key={index} disablePadding>
                                 <ListItemButton>
+                                {/* {console.log('subcat:',sc)} */}
+                                    {/* {console.log('itemname:',item.name)} */}
                                     <Link to={`/shop/${mc}/${item.name}/${br}`} className='text-decoration-none text-danger'>{item.name}</Link>
                                 </ListItemButton>
                             </ListItem>
@@ -79,6 +92,7 @@ export default function LeftNav() {
                         brand.map((item, index) => {
                             return <ListItem key={index} disablePadding>
                                 <ListItemButton>
+                                {/* {console.log('brand:',br)} */}
                                     <Link to={`/shop/${mc}/${sc}/${item.name}`} className='text-decoration-none text-danger'>{item.name}</Link>
                                 </ListItemButton>
                             </ListItem>

@@ -19,6 +19,12 @@ import AdminProduct from './Admin/AdminProduct'
 import AdminAddProduct from './Admin/AdminAddProduct'
 import AdminUpdateProduct from './Admin/AdminUpdateProduct'
 import Shop from '../component/Shop'
+import SingleProductPage from './SingleProductPage'
+import Login from './Login'
+import Signup from './Signup'
+import Profile from './Profile'
+import UpdateProfile from './UpdateProfile'
+import ContactUS from './Contact'
 export default function App() {
     return (
         <>
@@ -27,7 +33,12 @@ export default function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/shop/:mc/:sc/:br' element={<Shop />} />
-
+                    <Route path='/single-product/:_id' element={<SingleProductPage/>} />
+                    <Route path='/login' element={<Login/>} />
+                    <Route path='/signup' element={<Signup/>} />
+                    <Route path='/profile' element={<Profile/>} />
+                    <Route path='/update-profile' element={<UpdateProfile/>} />
+                    <Route path='/contact' element={<ContactUS/>} />
                     <Route path='/admin-home' element={<AdminHome />} />
                     <Route path='/admin-maincategory' element={<AdminMainCategory />} />
                     <Route path='/admin-add-maincategory' element={<AdminAddMaincategory />} />

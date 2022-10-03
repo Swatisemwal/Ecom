@@ -5,6 +5,9 @@ import ProductList from './ProductList'
 import { useParams } from 'react-router-dom'
 export default function Shop() {
     var {mc,sc,br} = useParams()
+    {console.log("mc mc",mc)}
+    {console.log("mc sc",sc)}
+    {console.log("mc br",br)}
     return (
         <div className='container-fluid mt-2'>
             <div className='row'>
@@ -14,7 +17,7 @@ export default function Shop() {
                 </div>
                 <div className='col-lg-10 col-md-8 col-12'>
                     <h5 className='background text-light text-center p-1'>Shop Section</h5>
-                    <ProductList mc={mc} sc={sc} br={br}/>
+                    <ProductList mc={mc} sc={sc} br={br} />
                 </div>
             </div>
         </div>

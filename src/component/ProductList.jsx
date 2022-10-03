@@ -2,30 +2,55 @@ import React, { useContext, useState, useEffect } from "react";
 
 import { Product } from "./store/ProductContextProvider";
 import ProductItem from "./ProductItem";
-import pic from '../assests/productimages/pic1.jpg'
 
 
 
 
-export default function ProductList() {
+
+export default function ProductList(props) {
   var [products, setproducts] = useState([]);
   var { getProduct } = useContext(Product);
-  let variblepic = ``;
+
 
   async function getAPIData() {
     var response = await getProduct();
+      // console.log(response.data);
+      // console.log('mc:',props.mc);
+      // console.log('sc:',props.sc);
+      // console.log('br:',props.br);
+      // console.log('item:',props.item);
+      // console.log('maincat:',props.maincategory);  //undefind
+      // console.log('subcat:',props.subcategory);     //undefind
+    var p = []
+    if(props.mc==="All" && props.sc==="All" && props.br==="All")
+    p=response.data
+  
+    else if(props.mc!=="All" && props.sc==="All" && props.br==="All")
+    p=response.data.filter((item)=>item.maincategory===props.mc)
+    else if(props.mc==="All" && props.sc!=="All" && props.br==="All")
+    p=response.data.filter((item)=>item.subcategory===props.sc)
+    else if(props.mc==="All" && props.sc==="All" && props.br!=="All")
+    p=response.data.filter((item)=>item.brand===props.br)
+    else if(props.mc!=="All" && props.sc!=="All" && props.br==="All")
+    p=response.data.filter((item)=>item.maincategory===props.mc && item.subcategory===props.sc)
+    else if(props.mc!=="All" && props.sc==="All" && props.br!=="All")
+    p=response.data.filter((item)=>item.maincategory===props.mc && item.brand===props.br)
+    else if(props.mc==="All" && props.sc!=="All" && props.br!=="All")
+    p=response.data.filter((item)=>item.brand===props.br && item.subcategory===props.sc)
+    else
+    p=response.data.filter((item)=>item.maincategory===props.mc && item.brand===props.br && item.subcategory===props.sc)
     console.log(response.data);
-    setproducts(response.data);
+    setproducts(p);
   }
   useEffect(() => {
     getAPIData();
-  }, []);
+  }, [props.mc,props.sc,props.br]);
   return (
     <div className="container-fluid">
-      <div className="row">
+      <div className="row ">
         {
              products.map((item, index) => {
-                return <div key={index} className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
+                return <div key={index} className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-2'>
                     {/* {variblepic = require(`../assests/productimages/pic${index+1}.jpg`)} */}
                     {/* {variblepic = pic} */}
                     <ProductItem 
