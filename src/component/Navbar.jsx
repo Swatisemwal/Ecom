@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -54,11 +53,7 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link text-light" to="/admin-home">
-                Admin
-              </Link>
-            </li>
+           
           </ul>
           <div className="d-flex">
             <form className="d-flex" role="search">
@@ -73,27 +68,36 @@ export default function Navbar() {
               </button>
             </form>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {localStorage?.getItem("login") ? 
-                  <li className="nav-item dropdown">
+              {localStorage?.getItem("login") ? (
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link text-light dropdown-toggle"
                     to="#"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                    >
-                   {/* { console.log(localStorage.getItem("name"))} */}
-                        {localStorage.getItem("username")}
+                  >
+                    {/* { console.log(localStorage.getItem("name"))} */}
+                    {localStorage.getItem("username")}
                   </Link>
-                
+
                   <ul className="dropdown-menu">
+                    {localStorage.getItem("role") === "Admin" ? 
+                      <li>
+                        <Link className="dropdown-item" to="/admin-home">
+                          Profile
+                        </Link>
+                      </li>
+                    : 
+                      <li>
+                        <Link className="dropdown-item" to="/profile">
+                          Profile
+                        </Link>
+                      </li>
+                    }
+                   
                     <li>
-                      <Link className="dropdown-item" to="#">
-                        Profile
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link className="dropdown-item" to="/cart">
                         Cart
                       </Link>
                     </li>
@@ -107,13 +111,13 @@ export default function Navbar() {
                     </li>
                   </ul>
                 </li>
-               : 
+              ) : (
                 <li className="nav-item">
                   <Link className="nav-link text-light" to="/login">
                     Login
                   </Link>
                 </li>
-}
+              )}
             </ul>
           </div>
         </div>

@@ -45,10 +45,10 @@ export default function ContactUS() {
         <div className='container-fluid mt-2'>
             <div className='row'>
                 <div className='col-md-6 col-12'>
-                    <div className='background text-light text-center p-1 mb-1'>Vishankchauhan@gmail.com</div>
-                    <div className='background text-light text-center p-1 mb-1'>9873848046</div>
-                    <div className='background text-light text-center p-1 mb-1'>A-43,Ducat,Noida Sector 16</div>
-                    <div className="mapouter"><div className="gmap_canvas"><iframe width="100%" height="410px" id="gmap_canvas" src="https://maps.google.com/maps?q=a-43%20Secotor%2016%20Noida&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe></div></div>
+                    <div className='background text-light text-center p-1 mb-1'>kriti.malhotra674@gmail.com</div>
+                    <div className='background text-light text-center p-1 mb-1'>2573848976</div>
+                    <div className='background text-light text-center p-1 mb-1'>janpath market</div>
+                    <div className="mapouter"><div className="gmap_canvas"><iframe width="100%" height="410px" id="gmap_canvas" src="https://maps.google.com/maps?q=a-43%20Secotor%2016%20janpath&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe></div></div>
                 </div>
                 <div className='col-md-6 col-12'>
                     <h5 className='background text-light text-center p-2'>Contact US Section</h5>

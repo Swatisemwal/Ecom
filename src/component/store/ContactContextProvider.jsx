@@ -57,7 +57,7 @@ async function deleteContact(item) {
         method: "delete"
     })
     var result = await rawdata.json()
-    console.log(result);
+    // console.log(result);
     return { result: "Done", message: "Contact is Deleted" }
 }
 export default function ContactContextProvider(props) {

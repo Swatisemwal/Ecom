@@ -1,4 +1,141 @@
 {
+  "checkout": [
+    {
+      "id": 0
+    },
+    {
+      "_id": "1",
+      "userid": "1",
+      "mode": "COD",
+      "status": "Dispatched",
+      "paymentstatus": "Done",
+      "rppid": "",
+      "total": 6400,
+      "shipping": 0,
+      "final": 6400,
+      "date": "2022-10-15T16:25:18.054Z",
+      "products": [
+        {
+          "_id": 1,
+          "userid": "1",
+          "productid": "1",
+          "name": "gucci jeans",
+          "maincategory": "male",
+          "subcategory": "jeans",
+          "brand": "Gucci",
+          "color": "black",
+          "size": "XXL",
+          "price": 6400,
+          "qty": 1,
+          "total": 6400,
+          "pic": "p2.jpg"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "userid": "1",
+      "mode": "COD",
+      "status": "Order Placed",
+      "paymentstatus": "Pending",
+      "rppid": "",
+      "total": 4800,
+      "shipping": 0,
+      "final": 4800,
+      "date": "2022-10-15T16:28:52.039Z",
+      "products": [
+        {
+          "_id": 1,
+          "userid": "1",
+          "productid": "5",
+          "name": "Kids Jeans Mufti",
+          "maincategory": "Kids",
+          "subcategory": "Jeans",
+          "brand": "Mufti",
+          "color": "Blue",
+          "size": "XL",
+          "pic": "p62.jpg",
+          "price": 1600,
+          "qty": 3,
+          "total": 4800
+        }
+      ],
+      "id": 2
+    },
+    {
+      "userid": "1",
+      "mode": "COD",
+      "status": "Order Placed",
+      "paymentstatus": "Pending",
+      "rppid": "",
+      "total": 500,
+      "shipping": 150,
+      "final": 650,
+      "date": "2022-10-15T17:14:58.713Z",
+      "products": [
+        {
+          "_id": 1,
+          "userid": "1",
+          "productid": "7",
+          "name": "Male Tshirt Nike",
+          "maincategory": "Male",
+          "subcategory": "Tshirt",
+          "brand": "Nike",
+          "color": "Black",
+          "size": "XL",
+          "price": 500,
+          "qty": 1,
+          "total": 500,
+          "pic": "p44.jpg"
+        }
+      ],
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "userid": "1",
+      "productid": "3",
+      "name": "Man Tshirt Adidas ",
+      "maincategory": "Male",
+      "subcategory": "Tshirt",
+      "brand": "Adidas",
+      "color": "Black",
+      "size": "XL",
+      "price": 800,
+      "qty": 1,
+      "total": 800,
+      "pic": "p3.jpg",
+      "id": 1
+    }
+  ],
+  "wishlist": [
+    {
+      "id": 0
+    },
+    {
+      "userid": "1",
+      "productid": "2",
+      "name": "female jeans",
+      "maincategory": "female",
+      "subcategory": "jeans",
+      "brand": "zara",
+      "color": "blue",
+      "size": "SM",
+      "price": 10800,
+      "pic": "p6.jpg",
+      "id": 1
+    }
+  ],
+  "newslatter": [
+    {
+      "id": 0
+    },
+    {
+      "email": "swati.semwal17@gmail.com",
+      "id": 1
+    }
+  ],
   "maincategory": [
     {
       "name": "male",
@@ -264,6 +401,68 @@
       "pic": "p10.jpg",
       "role": "User",
       "id": 1
+    },
+    {
+      "name": "",
+      "username": "kritika",
+      "email": "kritikakaymar@gmail.com",
+      "phone": "5485458846",
+      "password": "hereitis",
+      "addressline1": "",
+      "addressline2": "",
+      "addressline3": "",
+      "pin": "",
+      "city": "",
+      "state": "",
+      "pic": "",
+      "role": "Admin",
+      "id": 2
+    }
+  ],
+  "contact": [
+    {
+      "id": 0
+    },
+    {
+      "_id": "1",
+      "status": "Done",
+      "name": "swati semwal",
+      "email": "swati.semwal17@gmail.com",
+      "phone": "7503963518",
+      "subject": "return",
+      "message": "damaged product recieved",
+      "date": "2022-10-05T09:04:35.855Z",
+      "id": 1
+    },
+    {
+      "name": "keshav",
+      "email": "keshavkumar@gmail.com",
+      "phone": "5454545454",
+      "subject": "taken",
+      "message": "this is a sample message",
+      "status": "Active",
+      "date": "2022-10-05T09:51:07.544Z",
+      "id": 2
+    },
+    {
+      "name": "preeti",
+      "email": "keshavkumar@gmail.com",
+      "phone": "5454545454",
+      "subject": "taken",
+      "message": "sample message",
+      "status": "Active",
+      "date": "2022-10-09T16:29:58.487Z",
+      "id": 3
+    },
+    {
+      "name": "preeti",
+      "email": "preeti.lingwal22@gmail.com",
+      "phone": "5485458846",
+      "subject": "new",
+      "message": "newnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnewnew",
+      "status": "Active",
+      "date": "2022-10-10T12:19:39.373Z",
+      "id": 4
     }
   ]
 }

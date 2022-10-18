@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Product as ProductContext } from './store/ProductContextProvider'
-import { Link, useParams } from 'react-router-dom'
+import { Cart } from './store/CartContextProvider'
+import { Wishlist } from './store/WishlistContextProvider'
+import {  useNavigate, useParams } from 'react-router-dom'
 import Carousel from 'react-material-ui-carousel'
 import { Paper } from '@mui/material'
 
@@ -8,6 +10,9 @@ export default function SingleProductPage() {
     var [product, setproduct] = useState({})
     var { getSingle } = useContext(ProductContext)
     var { _id } = useParams()
+    var { addCart,getCart } = useContext(Cart)
+    var { addWishlist,getWishlist } = useContext(Wishlist)
+    var navigate = useNavigate()
     // {console.log('_id:',_id)}
 
     async function getAPIData() {
@@ -20,7 +25,7 @@ export default function SingleProductPage() {
     }
 
     function Item(props) {
-        console.log("propsPic:",props)
+        // console.log("propsPic:",props)
         return (
             <Paper>
                 {
@@ -46,6 +51,67 @@ export default function SingleProductPage() {
             pic: product.pic4
         }
     ]
+    async function addToCart(){
+        let item = {
+            userid:localStorage.getItem("userid")
+        }
+        let response = await getCart(item)
+        var flag = false
+        for(let item of response.data){
+            if(item.userid===localStorage.getItem("userid") && item.productid===_id){
+                flag=true
+                break
+            }
+        }
+        if(flag==false){
+            item = {
+                userid:localStorage.getItem("userid"),
+                productid:_id,
+                name:product.name,
+                maincategory:product.maincategory,
+                subcategory:product.subcategory,
+                brand:product.brand,
+                color:product.color,
+                size:product.size,
+                price:product.finalprice,
+                qty:1,
+                total:product.finalprice,
+                pic:product.pic1
+            }
+            response = await addCart(item)
+        }
+        navigate("/cart")
+    }
+
+    async function addToWishlist(){
+        let item = {
+            userid:localStorage.getItem("userid")
+        }
+        let response = await getWishlist(item)
+        var flag = false
+        for(let item of response.data){
+            if(item.userid===localStorage.getItem("userid") && item.productid===_id){
+                flag=true
+                break
+            }
+        }
+        if(flag==false){
+            item = {
+                userid:localStorage.getItem("userid"),
+                productid:_id,
+                name:product.name,
+                maincategory:product.maincategory,
+                subcategory:product.subcategory,
+                brand:product.brand,
+                color:product.color,
+                size:product.size,
+                price:product.finalprice,
+                pic:product.pic1
+            }
+            response = await addWishlist(item)
+        }
+        navigate("/profile")
+    }
 //   console.log("pic1:",product.pic1)
 //   console.log("pic2:",product.pic2)
 //   console.log("pic3:",product.pic3)
@@ -113,10 +179,10 @@ export default function SingleProductPage() {
                             <td>{product.description}</td>
                         </tr>
                         <tr>
-                            <th colSpan={2}><Link to="#" className='text-decoration-none text-center d-block w-100 background text-light p-1 rounded'>Add to Cart</Link></th>
+                            <th colSpan={2}><button to="#" onClick={addToCart}  className='text-decoration-none text-center d-block w-100 background text-light p-1 rounded'>Add to Cart</button></th>
                         </tr>
                         <tr>
-                            <th colSpan={2}><Link to="#" className='text-decoration-none text-center d-block w-100 background text-light p-1 rounded'>Add to Wishlist</Link></th>
+                            <th colSpan={2}><button to="#" onClick={addToWishlist} className='text-decoration-none text-center d-block w-100 background text-light p-1 rounded'>Add to Wishlist</button></th>
                         </tr>
                     </tbody>
                 </table>

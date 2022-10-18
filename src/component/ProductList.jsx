@@ -39,7 +39,7 @@ export default function ProductList(props) {
     p=response.data.filter((item)=>item.brand===props.br && item.subcategory===props.sc)
     else
     p=response.data.filter((item)=>item.maincategory===props.mc && item.brand===props.br && item.subcategory===props.sc)
-    console.log(response.data);
+    // console.log(response.data);
     setproducts(p);
   }
   useEffect(() => {

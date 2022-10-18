@@ -35,6 +35,10 @@ export default function Login() {
             localStorage.setItem("username",authUser.username)
             localStorage.setItem("name",authUser.name)
             localStorage.setItem("userid",authUser._id)
+            localStorage.setItem("role",authUser.role)
+            if(authUser.role==="Admin")
+            navigate("/admin-home")
+            else
             navigate("/profile")
         }
         else

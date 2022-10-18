@@ -52,9 +52,9 @@ export default function LeftNav() {
                         maincategory.map((item, index) => {
                             return <ListItem key={index} disablePadding>
                                 <ListItemButton>
-                                    {console.log('maincat item:',item)}
+                                    {/* {console.log('maincat item:',item)}
                                     {console.log('maincat :',mc)}
-                                    {console.log('maincat name:',item.name)}
+                                    {console.log('maincat name:',item.name)} */}
                                     <Link to={`/shop/${item.name}/${sc}/${br}`} className='text-decoration-none text-danger'>{item.name}</Link>
                                 
                                 </ListItemButton>
