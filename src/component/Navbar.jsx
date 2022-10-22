@@ -38,11 +38,7 @@ export default function Navbar() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link text-light" to="#">
-                About
-              </Link>
-            </li>
+          
             <li className="nav-item">
               <Link className="nav-link text-light" to="/shop/All/All/All">
                 Shop

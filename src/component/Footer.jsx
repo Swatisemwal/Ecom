@@ -37,7 +37,7 @@ export default function Footer() {
                             <label className="form-label">Email address</label>
                             <input type="email" className="form-control" name="email" onChange={getData} placeholder='Enter Your Email id to Suscribe Our Newslatter Service' />
                         </div>
-                        <button type="submit" className="btn btn-light w-100">Submit</button>
+                        <button type="submit" className="btn btn-light text-color w-100">Submit</button>
                     </form>
                 </div>
                 <div className='col-md-2 col-1'></div>

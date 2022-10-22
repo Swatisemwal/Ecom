@@ -45,7 +45,7 @@ export default function LeftNav() {
                     <h6 className='background text-light text-center p-1'>Maincategory</h6>
                     <ListItem disablePadding>
                         <ListItemButton>
-                            <Link to={`/shop/All/${sc}/${br}`} className='text-decoration-none text-danger'>All</Link>
+                            <Link to={`/shop/All/${sc}/${br}`} className='text-decoration-none text-color'>All</Link>
                         </ListItemButton>
                     </ListItem>
                     {
@@ -55,7 +55,7 @@ export default function LeftNav() {
                                     {/* {console.log('maincat item:',item)}
                                     {console.log('maincat :',mc)}
                                     {console.log('maincat name:',item.name)} */}
-                                    <Link to={`/shop/${item.name}/${sc}/${br}`} className='text-decoration-none text-danger'>{item.name}</Link>
+                                    <Link to={`/shop/${item.name}/${sc}/${br}`} className='text-decoration-none text-color'>{item.name}</Link>
                                 
                                 </ListItemButton>
                             </ListItem>
@@ -66,7 +66,7 @@ export default function LeftNav() {
                     <h6 className='background text-light text-center p-1'>Subcategory</h6>
                     <ListItem disablePadding>
                         <ListItemButton>
-                            <Link to={`/shop/${mc}/All/${br}`} className='text-decoration-none text-danger'>All</Link>
+                            <Link to={`/shop/${mc}/All/${br}`} className='text-decoration-none text-color'>All</Link>
                         </ListItemButton>
                     </ListItem>
                     {
@@ -75,7 +75,7 @@ export default function LeftNav() {
                                 <ListItemButton>
                                 {/* {console.log('subcat:',sc)} */}
                                     {/* {console.log('itemname:',item.name)} */}
-                                    <Link to={`/shop/${mc}/${item.name}/${br}`} className='text-decoration-none text-danger'>{item.name}</Link>
+                                    <Link to={`/shop/${mc}/${item.name}/${br}`} className='text-decoration-none text-color'>{item.name}</Link>
                                 </ListItemButton>
                             </ListItem>
                         })
@@ -85,7 +85,7 @@ export default function LeftNav() {
                     <h6 className='background text-light text-center p-1'>Brands</h6>
                     <ListItem disablePadding>
                         <ListItemButton>
-                            <Link to={`/shop/${mc}/${sc}/All`} className='text-decoration-none text-danger'>All</Link>
+                            <Link to={`/shop/${mc}/${sc}/All`} className='text-decoration-none text-color'>All</Link>
                         </ListItemButton>
                     </ListItem>
                     {
@@ -93,7 +93,7 @@ export default function LeftNav() {
                             return <ListItem key={index} disablePadding>
                                 <ListItemButton>
                                 {/* {console.log('brand:',br)} */}
-                                    <Link to={`/shop/${mc}/${sc}/${item.name}`} className='text-decoration-none text-danger'>{item.name}</Link>
+                                    <Link to={`/shop/${mc}/${sc}/${item.name}`} className='text-decoration-none text-color'>{item.name}</Link>
                                 </ListItemButton>
                             </ListItem>
                         })

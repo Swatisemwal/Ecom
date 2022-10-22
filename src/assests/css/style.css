@@ -1,5 +1,5 @@
 .background{
-    background-color: orangered;
+    background-color: rgb(50, 119, 131);
 }
 .drop{
     margin-left: 10px;
@@ -7,4 +7,15 @@
 }
 .mybtn:hover{
  border: none;
+}
+a:hover{
+    font-weight: bold;
+ 
+}
+button:hover{
+    font-size: large;
+   
+}
+.text-color{
+    color: rgb(19, 78, 88);
 }
